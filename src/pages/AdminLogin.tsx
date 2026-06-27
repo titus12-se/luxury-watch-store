@@ -23,10 +23,10 @@ export default function AdminLogin() {
     setLoading(true);
 
     const { data } = await supabase
-      .from('site_settings')
-      .select('value')
-      .eq('key', 'admin_pin')
-      .single();
+  .from('site_settings')
+  .select('value')
+  .eq('key', 'admin_pin')
+  .single();
 
     if (data?.value === pin) {
       sessionStorage.setItem('admin_pin_verified', 'true');
